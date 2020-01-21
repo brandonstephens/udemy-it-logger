@@ -2,7 +2,7 @@ import React from 'react'
 
 const SearchBar = props => {
   return (
-    <nav className="blue mb-5">
+    <nav className="purple mb-5">
       <div className="nav-wrapper">
         <form>
           <div className="input-field">
