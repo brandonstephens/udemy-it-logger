@@ -6,4 +6,5 @@ module.exports = {
   trailingComma: 'es5',
   parser: 'babylon',
   files: ['*.html', '*.css', '*.js', '*.jsx', '*.md'],
+  excludeFiles: ['./src/App.css'],
 }
