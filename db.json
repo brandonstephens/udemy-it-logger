@@ -22,25 +22,11 @@
       "tech": "Sara Wilson"
     },
     {
-      "message": "Test Log",
-      "attention": true,
-      "tech": "Bob Belcher",
-      "date": "2020-01-22T18:10:28.904Z",
-      "id": 4
-    },
-    {
       "message": "Changed network card on server",
       "attention": true,
       "tech": "John Wick",
       "date": "2020-01-22T18:10:49.552Z",
       "id": 5
-    },
-    {
-      "message": "asdfasdfasdf",
-      "attention": false,
-      "tech": "Bob Belcher",
-      "date": "2020-01-22T18:11:13.544Z",
-      "id": 6
     },
     {
       "message": "Hard drive failed :(",
