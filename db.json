@@ -27,13 +27,6 @@
       "tech": "John Wick",
       "date": "2020-01-22T18:10:49.552Z",
       "id": 5
-    },
-    {
-      "id": 6,
-      "message": "Hard drive failed",
-      "attention": true,
-      "tech": "John Wick",
-      "date": "2020-01-22T19:41:11.458Z"
     }
   ],
   "techs": [
