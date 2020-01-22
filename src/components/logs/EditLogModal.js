@@ -1,18 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
 import M from 'materialize-css/dist/js/materialize.min.js'
+import PropTypes from 'prop-types'
+import { updateLog } from '../../actions/logActions'
 
-const EditLogModal = props => {
+const EditLogModal = ({ updateLog, current }) => {
   const [message, setMessage] = useState('')
   const [attention, setAttention] = useState(false)
   const [tech, setTech] = useState('')
 
-  const onSubmit = event => {
+  useEffect(() => {
+    if (current) {
+      setMessage(current.message)
+      setAttention(current.attention)
+      setTech(current.tech)
+    }
+  }, [current])
+
+  const onSubmit = () => {
     if (message === '' || tech === '') {
       M.toast({
         html: 'Empty fields',
       })
     } else {
-      console.log(message, tech, attention)
+      const newLogData = {
+        id: current.id,
+        message,
+        attention,
+        tech,
+        date: new Date(),
+      }
+      updateLog(newLogData)
+      M.toast({ html: `Updated log ${current.id}` })
 
       setMessage('')
       setTech('')
@@ -27,9 +46,6 @@ const EditLogModal = props => {
         <div className="row">
           <div className="input-field col s12">
             <input type="text" name="message" value={message} onChange={event => setMessage(event.target.value)} />
-            <label htmlFor="message" className="active">
-              Log Message
-            </label>
           </div>
 
           <div className="input-field col s12">
@@ -78,4 +94,16 @@ const modalStyle = {
   height: '50vh',
 }
 
-export default EditLogModal
+EditLogModal.propTypes = {
+  current: PropTypes.object,
+  updateLog: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = state => ({
+  current: state.log.current,
+})
+
+export default connect(
+  mapStateToProps,
+  { updateLog }
+)(EditLogModal)
