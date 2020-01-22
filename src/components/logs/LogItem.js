@@ -7,13 +7,16 @@ const LogItem = ({ log, ...props }) => {
   return (
     <li {...props} className="collection-item">
       <div>
-        <a href="#edit-log-modal" className={`modal-trigger ${attention ? 'red-text' : 'blue-text'}`}>
+        <a href="#edit-log-modal" className={`modal-trigger ${attention ? 'purple-text' : 'grey-text text-darken-2'}`}>
           {message}
         </a>
         <br />
         <span className="grey-text">
           <span className="black-text">ID #{id}</span> last updated by <span className="black-text">{tech}</span> on{' '}
-          <Moment format="MMMM Do YYYY, h:mm:ss a" />
+        </span>
+        <br />
+        <span className="grey-text">
+          <Moment format="YYYY-MM-DD hh:mm:ss a" />
         </span>
 
         <a href="#!" className="secondary-content">
