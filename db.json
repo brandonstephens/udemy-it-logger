@@ -18,8 +18,8 @@
       "id": 3,
       "message": "Changed memory on workstatio 050",
       "attention": false,
-      "date": "2019-03-02",
-      "tech": "Sara Wilson"
+      "tech": "Jo Jo",
+      "date": "2020-01-23T21:12:38.038Z"
     },
     {
       "message": "Changed network card on server",
@@ -63,6 +63,16 @@
       "firstName": "Bobby",
       "lastName": "Belcher",
       "id": 4
+    },
+    {
+      "firstName": "Jo",
+      "lastName": "Jo",
+      "id": 5
+    },
+    {
+      "firstName": "wanner",
+      "lastName": "tilcox",
+      "id": 6
     }
   ]
 }

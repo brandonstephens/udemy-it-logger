@@ -19,6 +19,33 @@ export const getTechs = () => async dispatch => {
   }
 }
 
+// Add tech to server
+export const addTech = tech => async dispatch => {
+  try {
+    setLoading()
+    const response = await fetch('/techs', {
+      method: 'POST',
+      body: JSON.stringify(tech),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    const data = await response.json()
+
+    dispatch({
+      type: ADD_TECH,
+      payload: data,
+    })
+  } catch (error) {
+    dispatch({
+      type: TECHS_ERROR,
+      payload: error.response.statusText,
+    })
+  }
+}
+
+// Delete tech on server
+
 // Set loading to true
 export const setLoading = () => {
   return { type: SET_LOADING }
